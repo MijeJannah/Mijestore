@@ -1,0 +1,36 @@
+﻿@model Produk
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Edit Data";
+}
+<form method="post">
+<div class="border p-3 nt-4" style="border-color:black; background-color:pink">
+    <div class="text-center">
+        <label>Edit DATA</label>
+
+    </div>
+    <br />
+        @* <div asp-validation-summary="All"></div>*@
+    <br />
+    <label asp-for="Name" ></label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+    <br />
+    <br />
+        @*   <label asp-for="Masuk"></label>
+    <input asp-for="Masuk" type="datetime-local" class="form-control"/>
+    <br />
+    <br />*@
+    <label asp-for="Stock"></label>
+    <input asp-for="Stock" class="form-control" />
+    <span asp-validation-for="Stock" class="text-danger"></span>
+    <br />
+    <br />
+    <button type="submit" style="background-color:darkred; -webkit-text-fill-color:white">Update</button>
+    <a asp-controller="Produk" asp-action="Tampilan" class="btn-secondary" style="width:150px; background-color:cornflowerblue"> Back to List</a>
+
+
+</div>
+</form>

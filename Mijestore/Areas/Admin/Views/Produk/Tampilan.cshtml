@@ -1,0 +1,62 @@
+﻿
+@model IEnumerable<Produk>
+@{
+    ViewData["Title"] = "Tampilan";
+}
+<partial name="_Notification" />
+<br />
+ <a asp-controller="Produk" asp-action="Create" class="btn btn-lg btn-primary" type="button"> <i class="bi bi-plus-square"></i>Create New Data</a>
+<table class="table table-hover" style="width:410px">
+<thead>
+<tr>
+<th width="10px">
+                @Html.DisplayNameFor(model => model.Id)
+</th>
+<th width="50px">
+                @Html.DisplayNameFor(model => model.Name)
+</th>
+<th width="50px">
+                @Html.DisplayNameFor(model => model.Stock)
+</th>
+<th width="150px">
+
+</th>
+<th width="150px">
+
+</th>
+</tr>
+</thead>
+<tbody>
+        @foreach (var item in Model)
+        {
+
+                             <tr class="table-active">
+
+                    <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stock)
+                </td>
+                <td>
+                                <a asp-action="Edit" asp-controller="Produk" asp-route-id="@item.Id" class="btn btn-secondary" type="button"> <i class="bi bi-pencil-square"></i> Edit </a>
+                    </td>
+                    <td>
+                                    <a asp-action="Delete" asp-controller="Produk" asp-route-id="@item.Id" class="btn btn-secondary" type="button" ><i class="bi bi-trash"></i> Delete </a>
+                    </td>
+                @*  <td>
+        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+        |
+        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        </td>*@
+                </tr>
+        }
+
+
+</tbody>
+</table>
+

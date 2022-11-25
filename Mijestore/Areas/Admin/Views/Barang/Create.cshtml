@@ -1,0 +1,65 @@
+﻿@model Barang
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Create Data";
+}
+<form method="post" asp-action="create" enctype="multipart/form-data">
+    <input asp-for="Id" hidden />
+    <input asp-for="photo" hidden />
+    <div class="row">
+        <div class="col-10">
+            <div class="border p-3 nt-4" style="border-color:black; background-color:pink">
+    <div class="text-center">
+        <h2 class="text-primary">@(Model.Id!=0?"EDIT" : "CREATE") DATA BARANG</h2>
+    </div>
+    <br />
+                @* <div asp-validation-summary="All"></div>*@
+    <br />
+    <label asp-for="Name" ></label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+    <br />
+    <br />
+                @*   <label asp-for="Masuk"></label>
+    <input asp-for="Masuk" type="datetime-local" class="form-control"/>
+    <br />
+    <br />*@
+    <label asp-for="ProdukID"></label>
+    <select asp-for="ProdukID" asp-items="ViewBag.ProdukList" class="form-select">
+        <option disabled selected>--Pilih Produk</option>
+    </select>
+    <span asp-validation-for="ProdukID" class="text-danger"></span>
+    <br />
+    <br />
+     <label asp-for="desk" ></label>
+    <input asp-for="desk" class="form-control" />
+    <span asp-validation-for="desk" class="text-danger"></span>
+    <br />
+    <br />
+     <label asp-for="photo" ></label>
+    <input type="file" id="uploadBox" name="file" class="form-control" />
+                @* <span asp-validation-for="photo" class="text-danger"></span>*@
+    <br />
+    <br /> 
+    <label asp-for="Harga" ></label>
+    <input asp-for="Harga" class="form-control" />
+    <span asp-validation-for="Harga" class="text-danger"></span>
+    <br />
+    <br />
+    <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+    <a asp-controller="Barang" asp-action="Tampilan" class="btn btn-info" type="button"> Back to List</a>
+
+
+</div>
+        </div>
+        <div class="col-2">
+            <img src="@Model.photo" width="100%" style="border-radius:5px ; border:1px ; solid #bbb9b9" />
+
+        </div>
+
+    </div>
+
+</form>

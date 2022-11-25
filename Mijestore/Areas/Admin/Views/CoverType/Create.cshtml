@@ -1,0 +1,33 @@
+﻿@model CoverType
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Create Data";
+}
+<form method="post">
+<div class="border p-3 nt-4" style="border-color:black; background-color:pink">
+    <div class="text-center">
+        <label>CREATED DATA</label>
+
+    </div>
+    <br />
+   @* <div asp-validation-summary="All"></div>*@
+    <br />
+    <label asp-for="Name" ></label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+    <br />
+    <br />
+        @*   <label asp-for="Masuk"></label>
+    <input asp-for="Masuk" type="datetime-local" class="form-control"/>
+    <br />
+    <br />*@
+    <br />
+    <br />
+    <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+    <a asp-controller="CoverType" asp-action="Tampilan" class="btn btn-info" type="button"> Back to List</a>
+
+
+</div>
+</form>
